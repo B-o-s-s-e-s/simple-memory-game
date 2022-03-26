@@ -39,9 +39,8 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough (GIF)
 
-If you recorded multiple GIFs for all the implemented features, you can add them here:
-### ![](https://i.imgur.com/vubwoP6.gif)
-Reflection Questions
+If you recorded multiple GIFs for all the implemented features, you can add them here: (https://i.imgur.com/7hkSoOQ.gif)
+## Reflection Questions
 ### 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
 Throughout the pre-work process I consulted W3Schools from the link provided in the documentation and I visited the MDN Web Docs for clarification of JavaScript syntax when I did the optional feature.
 
