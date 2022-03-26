@@ -1,5 +1,5 @@
 //Global Variables
-var pattern = [1, 2, 4, 3, 2, 1, 2, 4];
+var pattern = [Math.floor(Math.random()*6)+1, Math.floor(Math.random()*6)+1, Math.floor(Math.random()*6)+1, Math.floor(Math.random()*6)+1, Math.floor(Math.random()*6)+1];  // Length is the total number of rounds
 var progress = 0; 
 var gamePlaying = false;
 var tonePlaying = false;
@@ -9,14 +9,34 @@ var guessCounter = 0;
 const clueHoldTime = 1000; //how long to hold each clue's light/sound
 const cluePauseTime = 333; //how long to pause in between clues
 const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
+var timer;
+var totalTime = 30;
+
+function time(){
+  if (totalTime <= -1) {
+    stopGame();
+    loseGame();
+    clearInterval(timer);
+    totalTime = 30;
+  }
+  
+  totalTime -= 1;
+  document.getElementById("timer").innerHTML = totalTime;
+}
 
 function startGame(){
     //initialize game variables
+  
+  for (let i = 0; i < pattern.length; i++) {
+    pattern[i] = Math.floor(Math.random()*6)+1
+  }
     progress = 0;
     gamePlaying = true;
     document.getElementById("startBtn").classList.add("hidden");
     document.getElementById("stopBtn").classList.remove("hidden");
     playClueSequence()
+    timer = setInterval(time, 1000);
+  
 }
 function stopGame(){
     //initialize game variables
@@ -24,6 +44,9 @@ function stopGame(){
     gamePlaying = false;
     document.getElementById("startBtn").classList.remove("hidden");
     document.getElementById("stopBtn").classList.add("hidden");
+    clearInterval(timer);
+    totalTime = 30;
+    document.getElementById("timer").innerHTML = null;
 }
 
 // Sound Synthesis Functions
@@ -31,7 +54,10 @@ const freqMap = {
   1: 261.6,
   2: 329.6,
   3: 392,
-  4: 466.2
+  4: 466.2,
+  5: 194,
+  6: 516.2
+  
 }
 function playTone(btn,len){ 
   o.frequency.value = freqMap[btn]
