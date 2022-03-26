@@ -17,6 +17,12 @@ button {
   
 }
 
+#sameLine {
+  display: flex;
+  gap: 20px;
+  height: 50px;
+}
+
 #gameButtonArea > button {
   width: 200px;
   height: 200px;
@@ -39,6 +45,13 @@ button {
 
 #button4 {
   background: lightyellow;
+}
+#button5 {
+  background: lavender;
+}
+
+#button6 {
+  background: peachpuff;
 }
 #button1:active,
 #button1.lit {
@@ -64,3 +77,16 @@ button {
   background-size: contain;
   box-shadow: inset 0px 0px 0px 10px NavajoWhite;
 }
+#button5:active,
+#button5.lit {
+    background-image: url("https://cdn.glitch.global/05b8c0d0-e21d-4ee6-8347-5c877b3feaff/penguin.JPG?v=1648318453956");
+  background-size: contain;
+  box-shadow: inset 0px 0px 0px 10px mediumorchid;
+}
+#button6:active,
+#button6.lit {
+    background-image: url("https://cdn.glitch.global/05b8c0d0-e21d-4ee6-8347-5c877b3feaff/dog.JPG?v=1648318454245");
+  background-size: contain;
+  box-shadow: inset 0px 0px 0px 10px sandybrown;
+}
+
